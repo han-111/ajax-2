@@ -38,7 +38,7 @@ var server = http.createServer(function (request, response) {
     try {
       content=fs.readFileSync(`./public/${requestPath}`)
     } catch (error) {
-      content='文件不存在'
+      content='文件不存在,请重试'
       response.statusCode = 404
     }
     response.write(content)
